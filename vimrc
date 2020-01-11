@@ -3,7 +3,7 @@
 
 " Colors {{{
 syntax enable           " enable syntax processing
-set background=dark     " assume background is black
+colorscheme molokai " set theme
 " }}}
 " Folding {{{
 set foldenable          " enable folding
@@ -14,6 +14,9 @@ set foldmethod=indent   " fold based on indent level
 " Searching {{{
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
+" }}}
+" Shortcuts {{{
+let mapleader=","       " leader is comma
 " }}}
 " Spacing {{{
 set tabstop=4           " number of visual spaces per tab
@@ -30,7 +33,15 @@ set showmatch           " highlight matching [{()}]
 " }}}
 " Plugins {{{
 " NERDTree {{{
+" toggle nerdtree with ctrl+n
+map <C-n> :NERDTreeToggle<CR>
 
+" open nerdtree on startup and switch to the next window
+autocmd vimenter * NERDTree
+autocmd VimEnter * wincmd p
+
+" close vim if nerdtree is the only open window 
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " }}}
 " }}}
 " Meta Configuration {{{
