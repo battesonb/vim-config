@@ -1,15 +1,21 @@
 " Byron Batteson
 " This file automatically folds all secions. Use 'za' to unfold a section.
 
+" Behavior {{{
+set bs=2                " enable expected backspace behaviors
+" }}}
 " Colors {{{
 syntax enable           " enable syntax processing
-colorscheme molokai " set theme
+colorscheme molokai     " set theme
 " }}}
 " Folding {{{
 set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 set foldmethod=indent   " fold based on indent level
+" }}}
+" Formatting {{{
+set encoding=UTF-8      " use utf-8 encoding
 " }}}
 " Searching {{{
 set incsearch           " search as characters are entered
