@@ -36,6 +36,7 @@ set cursorline          " highlight current line
 set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw only when there is a visual change
 set showmatch           " highlight matching [{()}]
+set laststatus=2        " show the status line
 " }}}
 " Plugins {{{
 " NERDTree {{{
