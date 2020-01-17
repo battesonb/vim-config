@@ -10,6 +10,6 @@
 [submodule "pack/plugins/start/ale"]
 	path = pack/plugins/start/ale
 	url = https://github.com/dense-analysis/ale.git
-[submodule "/home/byron/.vim/pack/plugins/start/lightline"]
-	path = /home/byron/.vim/pack/plugins/start/lightline
+[submodule "pack/plugins/start/lightline"]
+	path = pack/plugins/start/lightline
 	url = https://github.com/itchyny/lightline.vim.git
