@@ -7,3 +7,6 @@
 [submodule "pack/plugins/start/vim-devicons"]
 	path = pack/plugins/start/vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons.git
+[submodule "pack/plugins/start/ale"]
+	path = pack/plugins/start/ale
+	url = https://github.com/dense-analysis/ale.git
