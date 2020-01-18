@@ -1,6 +1,9 @@
 " Byron Batteson
 " This file automatically folds all secions. Use 'za' to unfold a section.
 
+" Shortcuts {{{
+let mapleader=","       " leader is comma
+" }}}
 " Behavior {{{
 set bs=2                " enable expected backspace behaviors
 " }}}
@@ -20,9 +23,9 @@ set encoding=UTF-8      " use utf-8 encoding
 " Searching {{{
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
-" }}}
-" Shortcuts {{{
-let mapleader=","       " leader is comma
+set ic                  " turn on ignore case mode
+" turn off search highlight
+nnoremap <Leader><space> :nohlsearch<CR>
 " }}}
 " Spacing {{{
 set tabstop=4           " number of visual spaces per tab
