@@ -21,7 +21,6 @@ set foldmethod=indent   " fold based on indent level
 " Formatting {{{
 set encoding=UTF-8      " use utf-8 encoding
 set tw=80               " set text width to 80 characters
-set fo+=a               " format option which automatically formats paragraphs
 " }}}
 " Searching {{{
 set incsearch           " search as characters are entered
