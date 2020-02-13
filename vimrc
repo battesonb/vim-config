@@ -6,6 +6,7 @@ let mapleader=","       " leader is comma
 " }}}
 " Behavior {{{
 set bs=2                " enable expected backspace behaviors
+set ruler               " show row and column number in the status bar
 " }}}
 " Colors {{{
 syntax enable           " enable syntax processing
