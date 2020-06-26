@@ -13,3 +13,6 @@
 [submodule "pack/plugins/start/lightline"]
 	path = pack/plugins/start/lightline
 	url = https://github.com/itchyny/lightline.vim.git
+[submodule "pack/plugins/start/clang_complete"]
+	path = pack/plugins/start/clang_complete
+	url = https://github.com/xavierd/clang_complete.git
