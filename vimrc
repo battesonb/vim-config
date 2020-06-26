@@ -62,6 +62,9 @@ elseif executable('ag')
   let g:ctrlp_user_command = 'ag -l --nocolor -g "" %s'
 endif
 " }}}
+" clang_complete {{{
+let g:clang_library_path="/usr/lib/llvm-10/lib"
+" }}}
 " }}}
 " Meta Configuration {{{
 set modeline
