@@ -11,6 +11,7 @@ set ruler               " show row and column number in the status bar
 " Colors {{{
 syntax enable           " enable syntax processing
 colorscheme molokai     " set theme
+set termguicolors
 " }}}
 " Folding {{{
 set foldenable          " enable folding
