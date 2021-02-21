@@ -66,6 +66,9 @@ endif
 " clang_complete {{{
 let g:clang_library_path="/usr/lib/llvm-10/lib"
 " }}}
+" rust.vim {{{
+let g:rustfmt_autosave=1
+" }}}
 " }}}
 " Meta Configuration {{{
 set modeline
