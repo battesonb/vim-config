@@ -19,3 +19,6 @@
 [submodule "pack/plugins/start/rust.vim"]
 	path = pack/plugins/start/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
+[submodule "pack/plugins/opt/YouCompleteMe"]
+	path = pack/plugins/opt/YouCompleteMe
+	url = https://github.com/ycm-core/YouCompleteMe.git

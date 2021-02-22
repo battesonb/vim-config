@@ -5,8 +5,9 @@
 let mapleader=","       " leader is comma
 " }}}
 " Behavior {{{
-set bs=2                " enable expected backspace behaviors
-set ruler               " show row and column number in the status bar
+set bs=2                  " enable expected backspace behaviors
+set ruler                 " show row and column number in the status bar
+filetype plugin indent on " keep indent based on file-type
 " }}}
 " Colors {{{
 syntax enable           " enable syntax processing
@@ -39,13 +40,22 @@ set shiftwidth=4        " shift width is the same as our tab size
 " User Interface {{{
 set number              " show line numbers
 set showcmd             " show last command in status bar
-set cursorline          " highlight current line
+" set cursorline          " highlight current line
 set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw only when there is a visual change
 set showmatch           " highlight matching [{()}]
 set laststatus=2        " show the status line
 " }}}
 " Plugins {{{
+" ALE {{{
+let g:ale_fixers = {
+  \ "javascript": ["eslint"]
+  \ }
+
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '🟡'
+let g:ale_fix_on_save = 1
+" }}}
 " NERDTree {{{
 " toggle nerdtree with ctrl+n
 map <C-n> :NERDTreeToggle<CR>
@@ -69,6 +79,8 @@ let g:clang_library_path="/usr/lib/llvm-10/lib"
 " rust.vim {{{
 let g:rustfmt_autosave=1
 " }}}
+" YouCompleteMe {{{
+execute "packadd YouCompleteMe"
 " }}}
 " Meta Configuration {{{
 set modeline
