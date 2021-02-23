@@ -12,7 +12,9 @@ filetype plugin indent on " keep indent based on file-type
 " Colors {{{
 syntax enable           " enable syntax processing
 colorscheme molokai     " set theme
-set termguicolors
+if has('win32')
+  set termguicolors
+endif
 " }}}
 " Folding {{{
 set foldenable          " enable folding
@@ -49,12 +51,17 @@ set laststatus=2        " show the status line
 " Plugins {{{
 " ALE {{{
 let g:ale_fixers = {
-  \ "javascript": ["eslint"]
-  \ }
+\   "javascript": ["eslint"],
+\   "rust": ["rustfmt"],
+\ }
 
+let g:ale_completion_enabled = 1
+let g:ale_fix_on_save = 1
+let g:ale_linters = {
+\   "rust": ["rls"],
+\ }
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '🟡'
-let g:ale_fix_on_save = 1
 " }}}
 " NERDTree {{{
 " toggle nerdtree with ctrl+n
@@ -64,9 +71,18 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " }}}
 " CtrlP {{{
+" custom ignore
+if has('win32')
+  set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*\\node_modules\\*
+elseif
+  set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
+endif
+
 " use faster searching methods if they are available
 if isdirectory('./.git')
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard']
+elseif has('win32')
+  let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'
 elseif executable('rg')
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
 elseif executable('ag')
@@ -80,7 +96,7 @@ let g:clang_library_path="/usr/lib/llvm-10/lib"
 let g:rustfmt_autosave=1
 " }}}
 " YouCompleteMe {{{
-execute "packadd YouCompleteMe"
+"execute "packadd YouCompleteMe"
 " }}}
 " Meta Configuration {{{
 set modeline
