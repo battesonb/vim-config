@@ -40,7 +40,8 @@ set expandtab           " tabs are spaces
 set shiftwidth=4        " shift width is the same as our tab size
 " }}}
 " User Interface {{{
-set number              " show line numbers
+set number              " show line number for current line
+set relativenumber      " show relative line numbers
 set showcmd             " show last command in status bar
 " set cursorline          " highlight current line
 set wildmenu            " visual autocomplete for command menu
@@ -57,9 +58,6 @@ let g:ale_fixers = {
 
 let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
-let g:ale_linters = {
-\   "rust": ["rls"],
-\ }
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '🟡'
 " }}}
@@ -81,8 +79,6 @@ endif
 " use faster searching methods if they are available
 if isdirectory('./.git')
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard']
-elseif has('win32')
-  let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'
 elseif executable('rg')
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
 elseif executable('ag')
