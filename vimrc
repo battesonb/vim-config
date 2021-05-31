@@ -68,6 +68,27 @@ map <C-n> :NERDTreeToggle<CR>
 " close vim if nerdtree is the only open window 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " }}}
+" coc {{{
+" code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+    if (index(['vim', 'help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    elseif (coc#rpc#ready())
+        call CocActionAsync('doHover')
+    else
+        execute '!' . &keywordprg . " " . expand('<cword>')
+    endif
+endfunction
+
+" }}}
 " CtrlP {{{
 " custom ignore
 if has('win32')
@@ -90,9 +111,6 @@ let g:clang_library_path="/usr/lib/llvm-10/lib"
 " }}}
 " rust.vim {{{
 let g:rustfmt_autosave=1
-" }}}
-" YouCompleteMe {{{
-"execute "packadd YouCompleteMe"
 " }}}
 " Meta Configuration {{{
 set modeline
