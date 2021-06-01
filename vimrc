@@ -50,17 +50,6 @@ set showmatch           " highlight matching [{()}]
 set laststatus=2        " show the status line
 " }}}
 " Plugins {{{
-" ALE {{{
-let g:ale_fixers = {
-\   "javascript": ["eslint"],
-\   "rust": ["rustfmt"],
-\ }
-
-let g:ale_completion_enabled = 1
-let g:ale_fix_on_save = 1
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '🟡'
-" }}}
 " NERDTree {{{
 " toggle nerdtree with ctrl+n
 map <C-n> :NERDTreeToggle<CR>
