@@ -77,12 +77,31 @@ function! s:show_documentation()
     endif
 endfunction
 
+" Symbol renaming
+nmap <leader>rn <Plug>(coc-rename)
+
+" Apply code action to selected code
+xmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Formatting selected code
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
+
 " }}}
 " CtrlP {{{
 " custom ignore
 if has('win32')
   set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*\\node_modules\\*
-elseif
+else
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 endif
 
