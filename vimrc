@@ -9,6 +9,10 @@ set bs=2                  " enable expected backspace behaviors
 set ruler                 " show row and column number in the status bar
 set ttimeoutlen=50        " reduce timeout for Vim to determine if the terminal will use an escape sequence
 filetype plugin indent on " keep indent based on file-type
+
+if has('mouse')
+  set mouse=a
+endif
 " }}}
 " Colors {{{
 syntax enable           " enable syntax processing
