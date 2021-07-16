@@ -30,6 +30,7 @@ set foldmethod=indent   " fold based on indent level
 " Formatting {{{
 set encoding=UTF-8      " use utf-8 encoding
 set tw=80               " set text width to 80 characters
+set guifont=JetBrains_Mono:h12:cANSI:qDRAFT
 " }}}
 " Searching {{{
 set incsearch           " search as characters are entered
@@ -119,11 +120,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " }}}
 " coc {{{
 " Use <c-space> to trigger completion
-if has('nvim')
-    inoremap <silent><expr> <c-space> coc#refresh()
-else
-    inoremap <silent><expr> <c-@> coc#refresh()
-endif
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " code navigation
 nmap <silent> gd <Plug>(coc-definition)
@@ -176,7 +173,7 @@ endif
 
 " use faster searching methods if they are available
 if isdirectory('./.git')
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard']
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --others --exclude-standard']
 elseif executable('rg')
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
 elseif executable('ag')
